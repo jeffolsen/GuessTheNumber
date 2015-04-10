@@ -16,7 +16,7 @@ object GuessTheNumber {
 
     return number.find(_ => Long {
       if (_.matches("^-?\\d+(\\.\\d)?$")) {
-        return if (Try(_.toLong).isSuccess) _ else PickANumberDialog("Whoa whoa, I can't count that far from zero.\n" + message)
+        return if (Try(_.toLong).isSuccess) _.toLong else PickANumberDialog("Whoa whoa, I can't count that far from zero.\n" + message)
       } else {
         return PickANumberDialog("That's not a number. " + message)
       }
